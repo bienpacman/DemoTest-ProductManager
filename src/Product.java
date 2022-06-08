@@ -57,4 +57,7 @@ public class Product {
     }
 
 
+    public String write() {
+        return id + "," +name + "," + price+"," + quantity + "," + describe ;
+    }
 }

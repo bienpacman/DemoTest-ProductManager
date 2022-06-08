@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class ProductManager {
     ArrayList<Product> products = new ArrayList<>();
+ReadAndWrite readAndWrite = new ReadAndWrite();
 
     Scanner scanner = new Scanner(System.in);
 
@@ -125,14 +126,14 @@ public class ProductManager {
         Collections.sort(products, new SortProductByPrice2());
     }
 
-//    public void expensiveProduct() {
-//        double max = products.get(0).getPrice();
-//        for (int i = 0; i < products.size(); i++) {
-//            if (products.get(i).getPrice() > max) {
-//                double temp = max;
-//                max = products.get();
-//
-//            }
-//
-//        }
+public double  getMax(){
+        double max = products.get(0).getPrice();
+    for (int i = 0; i < products.size(); i++) {
+        if (products.get(i).getPrice() > max){
+            max = products.get(i).getPrice();
+        }
     }
+    System.out.println("Sản phẩm có giá lớn nhất là :" +max);
+    return max;
+}
+}

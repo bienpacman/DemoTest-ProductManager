@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -59,9 +60,13 @@ public class Main {
                                 break;
                         }
                     case 6:
+                        productManager.getMax();
+                        break;
                     case 7:
+                        productManager.products = productManager.readAndWrite.reader();
+                        System.out.println("Đọc file thành công !!");
                     case 8:
-
+                        productManager.readAndWrite.write(productManager.products);
 
                 }
                 if (exit) {
@@ -69,6 +74,8 @@ public class Main {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Nhập sai rồi 1 Nhập lại đi :");
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
