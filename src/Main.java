@@ -67,7 +67,7 @@ public class Main {
                         System.out.println("Đọc file thành công !!");
                     case 8:
                         productManager.readAndWrite.write(productManager.products);
-
+                        System.out.println("ghi file thành công !!!");
                 }
                 if (exit) {
                     break;

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ProductManager {
     ArrayList<Product> products = new ArrayList<>();
-ReadAndWrite readAndWrite = new ReadAndWrite();
+    ReadAndWrite readAndWrite = new ReadAndWrite();
 
     Scanner scanner = new Scanner(System.in);
 
@@ -126,14 +126,26 @@ ReadAndWrite readAndWrite = new ReadAndWrite();
         Collections.sort(products, new SortProductByPrice2());
     }
 
-public double  getMax(){
-        double max = products.get(0).getPrice();
-    for (int i = 0; i < products.size(); i++) {
-        if (products.get(i).getPrice() > max){
-            max = products.get(i).getPrice();
+    public double getMax() {
+        while (true){
+            try {
+                double max = products.get(0).getPrice();
+                for (int i = 0; i < products.size(); i++) {
+                    if (products.get(i).getPrice() > max) {
+                        max = products.get(i).getPrice();
+                        System.out.println("Sản phẩm có giá lớn nhất là :" + max);
+                        return max;
+                    }
+                   else if (products == null){
+                        throw new IndexOutOfBoundsException();
+                    }
+                }
+            }catch (IndexOutOfBoundsException e){
+                System.out.println("không có sản phẩm !!");
+                break;
+
+            }
         }
+        return 0;
     }
-    System.out.println("Sản phẩm có giá lớn nhất là :" +max);
-    return max;
-}
 }
